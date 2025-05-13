@@ -3,147 +3,123 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Script JoinForceTG🔥</title>
+  <title>Script Premium</title>
   <!-- Font Awesome para ícones -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-rXnA1lK8MZzVsknz6jA9Bn+jStb2M/NkKf9aVXZohJ0uvZk6Ev7qHg1JGfMez0llbYtG5H+R9G2Zn2JGElJ2Yg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <style>
-    :root {
-      --roxo-escuro: #5a2d9a;
-      --roxo-medio: #6a4cff;
-      --roxo-claro: #8a6dff;
-      --roxo-brilhante: #9d7dff;
-      --roxo-suave: rgba(106, 76, 255, 0.1);
-      --fundo-escuro: #121212;
-      --fundo-cards: #1a1a1a;
-      --texto-branco: #ffffff;
-      --texto-cinza: #cccccc;
-    }
-    
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
-      background-color: #000000;
-      color: var(--texto-branco);
+      background-color: #0f0118; /* Dark purple background */
+      color: #ffffff;
     }
     header {
-      background-color: var(--fundo-escuro);
+      background-color: #1a0125; /* Darker purple */
       padding: 20px;
       text-align: center;
-      border-bottom: 2px solid var(--roxo-medio);
+      border-bottom: 2px solid #7b2cbf; /* Medium purple accent */
     }
     header h1 {
-      color: var(--roxo-brilhante);
+      color: #9d4edd; /* Light purple for headings */
       margin: 0;
       font-size: 32px;
-      text-shadow: 0 0 10px rgba(154, 125, 255, 0.5);
     }
-    
+    nav {
+      background-color: #240338; /* Dark purple navigation */
+      padding: 10px;
+      text-align: center;
+    }
+    nav a {
+      color: #e0aaff; /* Light lavender for links */
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      color: #c77dff; /* Brighter purple on hover */
+    }
     .hero {
       padding: 60px 20px;
       text-align: center;
-      background: linear-gradient(to bottom, #000000, var(--fundo-escuro));
+      background: linear-gradient(to right, #240338, #3c096c); /* Purple gradient */
     }
     .hero h2 {
       font-size: 36px;
-      color: var(--texto-branco);
+      color: #e0aaff; /* Light lavender */
     }
     .hero p {
       font-size: 18px;
       max-width: 600px;
       margin: 20px auto;
-      color: var(--texto-cinza);
+      color: #d8b4fe; /* Slightly brighter lavender */
     }
-    
-    /* Botões principais */
     .cta-button {
-      background: linear-gradient(to right, var(--roxo-medio), var(--roxo-claro));
-      color: var(--texto-branco);
+      background-color: #7b2cbf; /* Medium purple */
+      color: #ffffff;
       padding: 15px 30px;
       text-decoration: none;
       border-radius: 5px;
       font-size: 18px;
       display: inline-block;
       margin-top: 20px;
-      border: none;
-      cursor: pointer;
-      transition: all 0.3s;
-      box-shadow: 0 4px 15px rgba(106, 76, 255, 0.4);
+      transition: background-color 0.3s;
     }
     .cta-button:hover {
-      background: linear-gradient(to right, var(--roxo-claro), var(--roxo-brilhante));
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(106, 76, 255, 0.6);
+      background-color: #9d4edd; /* Lighter purple */
     }
-    
-    /* Cards de produtos */
     .products {
-      background-color: var(--fundo-escuro);
+      background-color: #14021f; /* Dark purple */
       padding: 40px 20px;
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
     }
     .product-card {
-      background-color: var(--fundo-cards);
-      border: 1px solid var(--roxo-medio);
+      background-color: #240338; /* Darker purple */
+      border: 1px solid #7b2cbf; /* Medium purple border */
       border-radius: 8px;
       margin: 15px;
       padding: 20px;
       width: 260px;
       text-align: center;
-      transition: all 0.3s;
+      transition: transform 0.3s;
     }
     .product-card:hover {
       transform: translateY(-5px);
-      box-shadow: 0 10px 25px rgba(106, 76, 255, 0.3);
-      border-color: var(--roxo-claro);
+      box-shadow: 0 10px 20px rgba(123, 44, 191, 0.3); /* Purple shadow */
     }
     .product-card h3 {
-      color: var(--roxo-claro);
+      color: #c77dff; /* Bright purple */
       margin-bottom: 10px;
     }
     .product-card p {
       font-size: 15px;
-      color: var(--texto-cinza);
+      color: #d8b4fe; /* Light lavender */
     }
     .product-card .price {
-      color: var(--roxo-brilhante);
+      color: #e0aaff; /* Light lavender */
       font-size: 20px;
       margin: 15px 0;
-      font-weight: bold;
     }
     .product-card .buy-button {
-      background-color: var(--roxo-medio);
-      color: var(--texto-branco);
+      background-color: #7b2cbf; /* Medium purple */
+      color: #ffffff;
       padding: 10px 20px;
       text-decoration: none;
       border-radius: 5px;
       font-weight: bold;
       display: inline-block;
-      transition: all 0.3s;
+      transition: background-color 0.3s;
     }
     .product-card .buy-button:hover {
-      background-color: var(--roxo-claro);
+      background-color: #9d4edd; /* Lighter purple */
     }
-    
-    /* Destaques */
-    .highlight {
-      color: var(--roxo-claro);
-      font-weight: bold;
-    }
-    .destaque-roxo {
-      background-color: var(--roxo-suave);
-      border-left: 3px solid var(--roxo-claro);
-      padding: 15px;
-      border-radius: 0 8px 8px 0;
-      margin: 20px 0;
-    }
-    
+
     /* Contatos */
     .contact-section {
       text-align: center;
       padding: 40px 20px;
-      background-color: var(--fundo-escuro);
+      background: linear-gradient(to right, #240338, #3c096c); /* Purple gradient */
     }
     .contact-row {
       display: flex;
@@ -161,10 +137,10 @@
       font-size: 16px;
       display: inline-flex;
       align-items: center;
-      transition: transform 0.3s;
+      transition: transform 0.2s;
     }
     .contact-buttons a:hover {
-      transform: translateY(-3px);
+      transform: scale(1.05);
     }
     .contact-buttons a i {
       margin-right: 8px;
@@ -178,34 +154,107 @@
     .instagram {
       background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
     }
-    
-    /* Conteúdo principal */
+
+    footer {
+      background-color: #0f0118; /* Dark purple */
+      color: #d8b4fe; /* Light lavender */
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+      border-top: 1px solid #3a0ca3; /* Deep purple accent */
+    }
+  </style>
+</head>
+<body>
+  <!-- Your HTML content here -->
+</body>
+</html>
+
+  <header style="margin: 0; padding: 0;">
+  <h1 style="margin: 0; padding: 0;">Script JoinForceTG🔥</h1>
+</header>
+  <div style="text-align: center;">
+  <h3>Transforme seu Telegram em uma verdadeira
+Máquina de Vendas!</h3>
+  </div>
+  <div style="text-align: center;">
+  <img src="https://i.imgur.com/5zkcWw6.jpg" alt="Imagem do site" width="200">
+</div>
+
+  <div style="
+  text-align: center;
+  color: #A9A9A9;
+  font-size: 16px;
+  font-weight: bold;
+  margin: 20px 0;
+">
+  Leve as pessoas certas para seus grupos e potencialize suas vendas online.<br>
+  Junte-se aos especialistas em vendas, e comece hoje mesmo a criar seu público.
+</div>
+
+  
+
+  <!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Script de Automação Premium</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #000;
+      color: #eee;
+      line-height: 1.6;
+    }
     .container {
       max-width: 960px;
       margin: auto;
       padding: 2rem;
     }
-    .container h3 {
-      color: var(--roxo-claro);
+    h1, h2, h3 {
+      color: #00ffe5;
+    }
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    h2 {
+      font-size: 2rem;
+      margin-top: 2rem;
+    }
+    p {
+      margin-bottom: 1rem;
     }
     ul {
       list-style: none;
       padding-left: 0;
     }
-    ul li {
-      padding: 8px 0;
-      position: relative;
-      padding-left: 25px;
-    }
     ul li::before {
-      content: "✓";
-      color: var(--roxo-medio);
-      font-weight: bold;
-      position: absolute;
-      left: 0;
+      content: "✔";
+      color: #00ff88;
+      margin-right: 8px;
     }
-    
-    /* Botão do WhatsApp - AGORA CORRIGIDO */
+    .highlight {
+      color: #00ff88;
+      font-weight: bold;
+    }
+    .cta {
+      background-color: #00ffe5;
+      color: #000;
+      padding: 1rem 2rem;
+      display: inline-block;
+      margin-top: 2rem;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 8px;
+      transition: background 0.3s ease;
+    }
+    .cta:hover {
+      background-color: #00c9b4;
+    }
     .whatsapp-button {
       position: fixed;
       bottom: 20px;
@@ -219,17 +268,15 @@
       justify-content: center;
       align-items: center;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-      transition: all 0.3s;
-      z-index: 100;
-      font-size: 24px;
-      text-decoration: none;
+      transition: transform 0.3s ease-in-out;
     }
     .whatsapp-button:hover {
       transform: scale(1.1);
-      background-color: #128C7E;
     }
-    
-    /* Animação */
+    .whatsapp-button img {
+      width: 30px;  /* Ajuste o tamanho do ícone conforme necessário */
+      height: 30px;
+    }
     @keyframes fadeIn {
       0% { opacity: 0; }
       100% { opacity: 1; }
@@ -237,141 +284,71 @@
     .fade-in {
       animation: fadeIn 1s ease-out;
     }
-    
-    footer {
-      background-color: #000000;
-      color: #aaaaaa;
-      text-align: center;
-      padding: 20px;
-      font-size: 14px;
-      border-top: 1px solid var(--roxo-medio);
-    }
-
-    /* Imagem do produto centralizada e com borda roxa */
-    .product-image {
-      display: block;
-      margin: 0 auto 20px;
-      border: 2px solid var(--roxo-medio);
-      border-radius: 8px;
-      max-width: 100%;
-      height: auto;
-    }
   </style>
 </head>
 <body>
-
-  <header>
-    <h1>Script JoinForceTG🔥</h1>
-  </header>
-  
-  <div class="hero">
-    <h2>Transforme seu Telegram em uma verdadeira Máquina de Vendas!</h2>
-    <img src="https://i.imgur.com/5zkcWw6.jpg" alt="Demonstração do Script" class="product-image" width="200">
-    <p style="color: #A9A9A9; font-size: 16px; font-weight: bold; margin: 20px auto;">
-      Leve as pessoas certas para seus grupos e potencialize suas vendas online.<br>
-      Junte-se aos especialistas em vendas, e comece hoje mesmo a criar seu público.
-    </p>
-    <a href="#" class="cta-button">QUERO TRANSFORMAR MEU TELEGRAM</a>
-  </div>
-
-  <!-- Seção de Destaques -->
   <div class="container fade-in">
-    <div class="destaque-roxo">
-      <h3>Oferta Especial por Tempo Limitado!</h3>
-      <p>Adquira hoje e receba <span class="highlight">suporte prioritário</span> por 30 dias gratuitamente + bônus exclusivo!</p>
-    </div>
-    
     <h3>Transforme a Gestão de Contas e Grupos com um Único Script</h3>
     <p>Automatize, escale e domine o jogo com o script de automação mais poderoso do mercado.</p>
-    <p>Este script é completo voltado para quem deseja gerenciar contas e adicionar membros automaticamente em grupos, de forma rápida, segura e escalável.</p>
+     <p>Este script é completo voltado para quem deseja gerenciar contas e adicionar membros automaticamente em grupos, de forma rápida, segura e escalável.</p>
 
     <h3>O que este script oferece para você:</h3>
     <ul>
-      <li>Automação total de cadastro, remoção e gerenciamento de contas</li>
-      <li>Filtro inteligente de contas banidas com 98% de precisão</li>
-      <li>Adição estratégica de membros (ativos, inativos, online, por frequência)</li>
-      <li>Modos stealth para operação discreta e sem bloqueios</li>
-      <li>Login em massa via CSV para múltiplas contas</li>
-      <li>Painel intuitivo com analytics em tempo real</li>
+      <li>Automação total de cadastro, remoção e gerenciamento de contas.</li>
+      <li>Filtro inteligente de contas banidas.</li>
+      <li>Adição de membros reais (ativos, inativos, online, por frequência).</li>
+      <li>Modos avançados e ocultos para evitar bloqueios.</li>
+      <li>Login via CSV para múltiplas contas.</li>
+      <li>Painel intuitivo, acessível para todos os níveis.</li>
     </ul>
     
-    <h3>Vantagens Exclusivas:</h3>
+    <h3>Por que comprar esse script?</h3>
+<ul>
+  <li><span class="highlight">Automação Completa</span> – Não vai perder mais horas realizando tarefas manuais. Nosso script automatiza a adição de membros, garantindo um crescimento contínuo e escalável.</li>
+  <li><span class="highlight">Profissionalismo e Controle</span> – A automação e os recursos avançados permitem que você maximize os resultados com menos esforço.</li>
+  <li><span class="highlight">Acesso a Membros Qualificados</span> – Nosso sistema vai garantir que você atraia membros reais, genuinamente interessados no seu nicho, sem filtros falsos ou bots.</li>
+  <li><span class="highlight">Segurança Garantida</span> – Trabalharemos com as melhores práticas do mercado para garantir que o crescimento do seu grupo seja sustentável, sem violar políticas e regras do Telegram.</li>
+  <li><span class="highlight">Resultados Imediatos</span> – Após você implementar o script, você verá um aumento real no número de membros e engajamento em seu grupo de forma instantânea.</li>
+    </ul>
+
+    <h3>Por que esse script é essencial?</h3>
     <ul>
-      <li><span class="highlight">Economia de 10+ horas semanais</span> com automação inteligente</li>
-      <li><span class="highlight">Crescimento acelerado</span> - até 300% mais membros</li>
-      <li><span class="highlight">Tecnologia anti-ban</span> desenvolvida por especialistas</li>
-      <li><span class="highlight">Suporte VIP</span> com resposta em menos de 2 horas</li>
-      <li><span class="highlight">Atualizações gratuitas</span> para sempre</li>
+      <li><span class="highlight">Economia real de tempo e dinheiro</span>: esqueça o trabalho manual.</li>
+      <li><span class="highlight">Crescimento em escala</span>: mais membros, mais rápido.</li>
+      <li><span class="highlight">Alta segurança</span>: operações otimizadas para evitar bloqueios.</li>
+      <li><span class="highlight">Performance profissional</span>: nível de agência.</li>
+      <li><span class="highlight">Pronto para escalar</span>: 10, 100 ou 1000 contas com facilidade.</li>
     </ul>
 
-    <h3>Resultados Comprovados:</h3>
-    <div class="destaque-roxo">
-      <p>"Utilizando o JoinForceTG, meu grupo saltou de 200 para 2.800 membros em apenas 3 semanas, com engajamento 5x maior!" <br>- Carlos S., Marketing Digital</p>
-    </div>
-
-    <a href="#" class="cta-button">GARANTIR ACESSO AGORA</a>
-  </div>
-
-  <!-- Seção de Planos -->
-  <div class="products">
-    <div class="product-card">
-      <h3>Plano Mensal</h3>
-      <div class="price">R$30,00</div>
-      <p>Acesso completo por 1 mês</p>
-      <p>Suporte básico por e-mail</p>
-      <p>Atualizações mensais</p>
-      <p>Até 5 contas</p>
-      <a href="#" class="buy-button">Assinar</a>
-    </div>
+    <h3>Resultados!</h3>
+    <ul>
+      <li>Grupos crescendo em poucas horas.</li>
+      <li>Engajamento real com membros segmentados.</li>
+      <li>Operações 24/7 com mínima supervisão.</li>
+    </ul>
     
-    <div class="product-card" style="border: 2px solid var(--roxo-claro); transform: scale(1.05); box-shadow: 0 0 20px rgba(138, 109, 255, 0.5);">
-      <div style="position: absolute; top: -10px; right: 20px; background: var(--roxo-claro); color: white; padding: 3px 10px; border-radius: 20px; font-size: 12px; font-weight: bold;">MAIS POPULAR</div>
-      <h3 style="color: var(--roxo-brilhante);">Plano Semestral</h3>
-      <div class="price" style="color: var(--roxo-brilhante);">R$115,00</div>
-      <p>Acesso por 6 meses</p>
-      <p>Suporte prioritário 24/7</p>
-      <p>Atualizações semanais</p>
-      <p>Até 20 contas</p>
-      <p style="color: var(--roxo-brilhante); font-weight: bold;">Economize R$65</p>
-      <a href="#" class="buy-button">Assinar</a>
-    </div>
+    <h3><h3>
     
-    <div class="product-card">
-      <h3>Plano Vitalício</h3>
-      <div class="price">R$150,00</div>
-      <p>Acesso vitalício</p>
-      <p>Suporte VIP personalizado</p>
-      <p>Atualizações premium</p>
-      <p>Contas ilimitadas</p>
-      <p>Bônus exclusivos</p>
-      <a href="#" class="buy-button">Assinar</a>
-    </div>
+    <h3>Veja como seu grupo vai crescer!</h3>
+<p>Imagine como será incrível você ter centenas de novos membros reais todos os dias, sem ter que ficar preso em processos manuais de adição ou ficar compartilhando links e pedindos membros para entrar. Nosso script não só adiciona membros com precisão, como também garante que você traga pessoas realmente interessadas no seu conteúdo.</p>
+
+    <h3>Ou você automatiza, ou você fica para trás!</h3>
+    <p>Este script é a <span class="highlight">chave para escalar seus projetos</span> no digital com inteligência e impacto. Não fique para trás enquanto outros dominam o mercado.</p>
+
+    <a class="cta" href="#">Garanta o seu agora</a>
   </div>
 
-  <!-- Seção de Contato -->
-  <div class="contact-section">
-    <h3>Ficou com dúvidas?</h3>
-    <p>Nossa equipe está pronta para te ajudar a potencializar seus resultados:</p>
-    <div class="contact-row">
-      <div class="contact-buttons">
-        <a href="https://wa.me/5538998508385" class="whatsapp" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
-        <a href="#" class="telegram"><i class="fab fa-telegram"></i> Telegram</a>
-        <a href="#" class="instagram"><i class="fab fa-instagram"></i> Instagram</a>
-      </div>
-    </div>
-    <p style="margin-top: 20px; font-size: 14px; color: var(--texto-cinza);">
-      Horário de atendimento: Segunda a Sexta, das 9h às 18h
-    </p>
-  </div>
-
-  <!-- Botão do WhatsApp Flutuante - AGORA FUNCIONANDO -->
   <a href="https://wa.me/5538998508385" class="whatsapp-button" target="_blank">
-    <i class="fab fa-whatsapp"></i>
+    <img src="https://i.imgur.com/bRY90Wz.png" alt="WhatsApp" />
   </a>
-
-  <footer>
-    &copy; 2025 Script JoinForceTG. Todos os direitos reservados.<br>
-    <small>Este produto não é afiliado ao Telegram ou qualquer outra plataforma mencionada.</small>
-  </footer>
 </body>
 </html>
+
+  
+  
+  <footer>
+    &copy; 2025 Scripts Premium. Todos os direitos reservados.
+  </footer>
+
+</body>
+    </html>

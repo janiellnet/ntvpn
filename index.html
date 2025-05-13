@@ -1,215 +1,158 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Script JoinForceTG</title>
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      background-color: #0e0e0e;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      color: #eee;
-    }
-    .topo {
-      text-align: center;
-      padding: 3rem 1rem 2rem 1rem;
-      border-bottom: 1px solid #222;
-    }
-    .topo h1 {
-      color: #00ffe0;
-      font-size: 3rem;
-      margin-bottom: 1rem;
-    }
-    .topo h2 {
-      color: #00ff88;
-      font-size: 1.6rem;
-      margin-bottom: 1rem;
-    }
-    .topo p {
-      color: #ccc;
-      font-size: 1rem;
-      max-width: 700px;
-      margin: auto;
-    }
-
-    .container {
-      max-width: 1000px;
-      margin: auto;
-      padding: 2rem;
-    }
-    h2, h3 {
-      color: #00ffe0;
-    }
-    p {
-      margin-bottom: 1rem;
-      font-size: 1.1rem;
-    }
-    ul {
-      list-style: none;
-      padding-left: 0;
-    }
-    ul li::before {
-      content: "✓";
-      color: #00ff88;
-      margin-right: 10px;
-      font-weight: bold;
-    }
-    .highlight {
-      color: #00ff88;
-      font-weight: bold;
-    }
-    .cta {
-      background-color: #00ffe0;
-      color: #000;
-      padding: 1rem 2rem;
-      display: inline-block;
-      margin-top: 2rem;
-      text-decoration: none;
-      font-weight: bold;
-      border-radius: 8px;
-      transition: 0.3s;
-    }
-    .cta:hover {
-      background-color: #00c9b4;
-    }
-
-    .section {
-      margin-top: 3rem;
-      border-top: 1px solid #222;
-      padding-top: 2rem;
-    }
-
-    .pricing {
-      display: flex;
-      gap: 2rem;
-      flex-wrap: wrap;
-      margin-top: 2rem;
-    }
-
-    .plan {
-      flex: 1 1 220px;
-      background-color: #1a1a1a;
-      padding: 1.5rem;
-      border-radius: 10px;
-      border: 1px solid #00ffe0;
-      text-align: center;
-    }
-
-    .plan h3 {
-      color: #00ffe0;
-      font-size: 1.5rem;
-    }
-
-    .plan p {
-      margin: 1rem 0;
-    }
-
-    .price {
-      font-size: 2rem;
-      color: #00ff88;
-      margin: 1rem 0;
-    }
-
-    .whatsapp-button {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background-color: #25D366;
-      border-radius: 50%;
-      width: 60px;
-      height: 60px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-      transition: transform 0.3s ease-in-out;
-    }
-
-    .whatsapp-button:hover {
-      transform: scale(1.1);
-    }
-
-    .whatsapp-button img {
-      width: 32px;
-      height: 32px;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabela de Preços - Scripts</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #121212;
+            color: #e0e0e0;
+            margin: 0;
+            padding: 20px;
+        }
+        .pricing-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+        .pricing-table {
+            background-color: #1e1e1e;
+            border-radius: 10px;
+            width: 280px;
+            padding: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        .pricing-table:hover {
+            transform: translateY(-10px);
+        }
+        .pricing-header {
+            margin-bottom: 20px;
+        }
+        .plan-name {
+            font-size: 24px;
+            font-weight: bold;
+            margin: 0;
+            color: #6a4cff; /* Roxo-azul (pode alterar para verde se preferir) */
+        }
+        .plan-price {
+            font-size: 32px;
+            font-weight: bold;
+            margin: 10px 0;
+            color: #fff;
+        }
+        .plan-period {
+            font-size: 14px;
+            opacity: 0.8;
+        }
+        .plan-features {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0;
+        }
+        .plan-features li {
+            padding: 8px 0;
+            border-bottom: 1px solid #333;
+        }
+        .signup-btn {
+            background-color: #6a4cff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.3s;
+        }
+        .signup-btn:hover {
+            background-color: #5a3ce6;
+        }
+        .highlight {
+            border: 2px solid #6a4cff;
+            position: relative;
+        }
+        .highlight::before {
+            content: "POPULAR";
+            position: absolute;
+            top: -10px;
+            right: 20px;
+            background-color: #6a4cff;
+            color: white;
+            padding: 3px 10px;
+            border-radius: 15px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        h1 {
+            text-align: center;
+            color: #6a4cff;
+            margin-bottom: 10px;
+        }
+        p.subtitle {
+            text-align: center;
+            opacity: 0.8;
+            margin-top: 0;
+        }
+    </style>
 </head>
 <body>
+    <h1>Planos de Script</h1>
+    <p class="subtitle">Escolha o melhor plano para suas necessidades</p>
 
-  <!-- TOPO -->
-  <div class="topo">
-    <h1>Script JoinForceTG🔥</h1>
-    <h2>Transforme seu Telegram em uma verdadeira Máquina de Vendas!</h2>
-    <p>Leve as pessoas certas para seus grupos e potencialize suas vendas online. <br>
-      Junte-se aos especialistas em vendas, e comece hoje mesmo a criar seu público.</p>
-  </div>
-
-  <!-- CONTEÚDO PRINCIPAL -->
-  <div class="container">
-    <div class="section">
-      <h2>O Que Este Script Faz?</h2>
-      <ul>
-        <li>Cadastro e remoção automatizada de contas.</li>
-        <li>Login múltiplo via CSV com total praticidade.</li>
-        <li>Filtragem de contas banidas automaticamente.</li>
-        <li>Adição de membros reais (diários, semanais, mensais, online, inativos).</li>
-        <li>Modos ocultos e avançados para evitar bloqueios e punições.</li>
-        <li>Painel de controle intuitivo para qualquer usuário.</li>
-      </ul>
-    </div>
-
-    <div class="section">
-      <h2>Por Que Você Precisa Disso?</h2>
-      <ul>
-        <li><span class="highlight">Resultados reais</span>: membros ativos, engajamento e crescimento imediato.</li>
-        <li><span class="highlight">Economia de tempo</span>: esqueça o trabalho manual.</li>
-        <li><span class="highlight">Alta escalabilidade</span>: controle centenas de contas com facilidade.</li>
-        <li><span class="highlight">Ideal para afiliados, agências, gestores de tráfego, criadores e vendedores.</span></li>
-      </ul>
-    </div>
-
-    <div class="section">
-      <h2>Planos e Preços</h2>
-      <div class="pricing">
-        <div class="plan">
-          <h3>Plano 30 Dias</h3>
-          <p>Ideal para quem quer testar e começar a escalar.</p>
-          <div class="price">R$ 49,90</div>
-          <a class="cta" href="https://wa.me/5538998508385">Contratar</a>
+    <div class="pricing-container">
+        <!-- Plano Mensal -->
+        <div class="pricing-table">
+            <div class="pricing-header">
+                <h2 class="plan-name">Mensal</h2>
+                <div class="plan-price">R$30,00</div>
+                <div class="plan-period">por mês</div>
+            </div>
+            <ul class="plan-features">
+                <li>Acesso completo ao script</li>
+                <li>Suporte via e-mail</li>
+                <li>Atualizações mensais</li>
+                <li>1 usuário</li>
+            </ul>
+            <button class="signup-btn">ASSINAR AGORA</button>
         </div>
-        <div class="plan">
-          <h3>Plano 6 Meses</h3>
-          <p>Perfeito para campanhas consistentes e crescimento contínuo.</p>
-          <div class="price">R$ 199,00</div>
-          <a class="cta" href="https://wa.me/5538998508385">Contratar</a>
+
+        <!-- Plano Semestral (Destaque) -->
+        <div class="pricing-table highlight">
+            <div class="pricing-header">
+                <h2 class="plan-name">Semestral</h2>
+                <div class="plan-price">R$115,00</div>
+                <div class="plan-period">6 meses (economize R$65)</div>
+            </div>
+            <ul class="plan-features">
+                <li>Acesso completo ao script</li>
+                <li>Suporte prioritário</li>
+                <li>Atualizações semanais</li>
+                <li>3 usuários</li>
+            </ul>
+            <button class="signup-btn">ASSINAR AGORA</button>
         </div>
-        <div class="plan">
-          <h3>Plano Anual</h3>
-          <p>Para quem quer estabilidade e performance por longo prazo.</p>
-          <div class="price">R$ 349,00</div>
-          <a class="cta" href="https://wa.me/5538998508385">Contratar</a>
+
+        <!-- Plano Vitalício -->
+        <div class="pricing-table">
+            <div class="pricing-header">
+                <h2 class="plan-name">Vitalício</h2>
+                <div class="plan-price">R$150,00</div>
+                <div class="plan-period">pagamento único</div>
+            </div>
+            <ul class="plan-features">
+                <li>Acesso vitalício ao script</li>
+                <li>Suporte 24/7</li>
+                <li>Atualizações gratuitas</li>
+                <li>Usuários ilimitados</li>
+            </ul>
+            <button class="signup-btn">ASSINAR AGORA</button>
         </div>
-        <div class="plan">
-          <h3>Vitalício</h3>
-          <p>Acesso definitivo e suporte prioritário.</p>
-          <div class="price">R$ 497,00</div>
-          <a class="cta" href="https://wa.me/5538998508385">Contratar</a>
-        </div>
-      </div>
     </div>
-
-    <div class="section">
-      <h2>Garantia e Suporte</h2>
-      <p>Suporte técnico via WhatsApp e atualizações incluídas em todos os planos. Garantia de entrega e funcionamento.</p>
-    </div>
-  </div>
-
-  <a href="https://wa.me/5538998508385" class="whatsapp-button" target="_blank">
-    <img src="https://cdn-icons-png.flaticon.com/512/3670/3670051.png" alt="WhatsApp" />
-  </a>
-
 </body>
 </html>

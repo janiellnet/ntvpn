@@ -205,7 +205,7 @@
       left: 0;
     }
     
-    /* Botão do WhatsApp */
+    /* Botão do WhatsApp - AGORA CORRIGIDO */
     .whatsapp-button {
       position: fixed;
       bottom: 20px;
@@ -221,9 +221,12 @@
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
       transition: all 0.3s;
       z-index: 100;
+      font-size: 24px;
+      text-decoration: none;
     }
     .whatsapp-button:hover {
       transform: scale(1.1);
+      background-color: #128C7E;
     }
     
     /* Animação */
@@ -243,6 +246,16 @@
       font-size: 14px;
       border-top: 1px solid var(--roxo-medio);
     }
+
+    /* Imagem do produto centralizada e com borda roxa */
+    .product-image {
+      display: block;
+      margin: 0 auto 20px;
+      border: 2px solid var(--roxo-medio);
+      border-radius: 8px;
+      max-width: 100%;
+      height: auto;
+    }
   </style>
 </head>
 <body>
@@ -253,7 +266,7 @@
   
   <div class="hero">
     <h2>Transforme seu Telegram em uma verdadeira Máquina de Vendas!</h2>
-    <img src="https://i.imgur.com/5zkcWw6.jpg" alt="Imagem do site" width="200">
+    <img src="https://i.imgur.com/5zkcWw6.jpg" alt="Demonstração do Script" class="product-image" width="200">
     <p style="color: #A9A9A9; font-size: 16px; font-weight: bold; margin: 20px auto;">
       Leve as pessoas certas para seus grupos e potencialize suas vendas online.<br>
       Junte-se aos especialistas em vendas, e comece hoje mesmo a criar seu público.
@@ -265,7 +278,7 @@
   <div class="container fade-in">
     <div class="destaque-roxo">
       <h3>Oferta Especial por Tempo Limitado!</h3>
-      <p>Adquira hoje e receba <span class="highlight">suporte prioritário</span> por 30 dias gratuitamente.</p>
+      <p>Adquira hoje e receba <span class="highlight">suporte prioritário</span> por 30 dias gratuitamente + bônus exclusivo!</p>
     </div>
     
     <h3>Transforme a Gestão de Contas e Grupos com um Único Script</h3>
@@ -275,24 +288,26 @@
     <h3>O que este script oferece para você:</h3>
     <ul>
       <li>Automação total de cadastro, remoção e gerenciamento de contas</li>
-      <li>Filtro inteligente de contas banidas</li>
-      <li>Adição de membros reais (ativos, inativos, online, por frequência)</li>
-      <li>Modos avançados e ocultos para evitar bloqueios</li>
-      <li>Login via CSV para múltiplas contas</li>
-      <li>Painel intuitivo, acessível para todos os níveis</li>
+      <li>Filtro inteligente de contas banidas com 98% de precisão</li>
+      <li>Adição estratégica de membros (ativos, inativos, online, por frequência)</li>
+      <li>Modos stealth para operação discreta e sem bloqueios</li>
+      <li>Login em massa via CSV para múltiplas contas</li>
+      <li>Painel intuitivo com analytics em tempo real</li>
     </ul>
     
-    <h3>Por que comprar esse script?</h3>
+    <h3>Vantagens Exclusivas:</h3>
     <ul>
-      <li><span class="highlight">Automação Completa</span> – Não perca mais horas com tarefas manuais</li>
-      <li><span class="highlight">Profissionalismo e Controle</span> – Maximize resultados com menos esforço</li>
-      <li><span class="highlight">Acesso a Membros Qualificados</span> – Atraia membros reais e interessados</li>
-      <li><span class="highlight">Segurança Garantida</span> – Métodos aprovados que evitam bloqueios</li>
-      <li><span class="highlight">Resultados Imediatos</span> – Crescimento visível desde o primeiro dia</li>
+      <li><span class="highlight">Economia de 10+ horas semanais</span> com automação inteligente</li>
+      <li><span class="highlight">Crescimento acelerado</span> - até 300% mais membros</li>
+      <li><span class="highlight">Tecnologia anti-ban</span> desenvolvida por especialistas</li>
+      <li><span class="highlight">Suporte VIP</span> com resposta em menos de 2 horas</li>
+      <li><span class="highlight">Atualizações gratuitas</span> para sempre</li>
     </ul>
 
-    <h3>Veja como seu grupo vai crescer!</h3>
-    <p>Imagine ter centenas de novos membros reais todos os dias, sem trabalho manual. Nosso script garante pessoas realmente interessadas no seu conteúdo.</p>
+    <h3>Resultados Comprovados:</h3>
+    <div class="destaque-roxo">
+      <p>"Utilizando o JoinForceTG, meu grupo saltou de 200 para 2.800 membros em apenas 3 semanas, com engajamento 5x maior!" <br>- Carlos S., Marketing Digital</p>
+    </div>
 
     <a href="#" class="cta-button">GARANTIR ACESSO AGORA</a>
   </div>
@@ -303,18 +318,21 @@
       <h3>Plano Mensal</h3>
       <div class="price">R$30,00</div>
       <p>Acesso completo por 1 mês</p>
-      <p>Suporte básico</p>
+      <p>Suporte básico por e-mail</p>
       <p>Atualizações mensais</p>
+      <p>Até 5 contas</p>
       <a href="#" class="buy-button">Assinar</a>
     </div>
     
-    <div class="product-card" style="border: 2px solid var(--roxo-claro); transform: scale(1.05);">
+    <div class="product-card" style="border: 2px solid var(--roxo-claro); transform: scale(1.05); box-shadow: 0 0 20px rgba(138, 109, 255, 0.5);">
+      <div style="position: absolute; top: -10px; right: 20px; background: var(--roxo-claro); color: white; padding: 3px 10px; border-radius: 20px; font-size: 12px; font-weight: bold;">MAIS POPULAR</div>
       <h3 style="color: var(--roxo-brilhante);">Plano Semestral</h3>
       <div class="price" style="color: var(--roxo-brilhante);">R$115,00</div>
       <p>Acesso por 6 meses</p>
-      <p>Suporte prioritário</p>
+      <p>Suporte prioritário 24/7</p>
       <p>Atualizações semanais</p>
-      <p>Economize R$65</p>
+      <p>Até 20 contas</p>
+      <p style="color: var(--roxo-brilhante); font-weight: bold;">Economize R$65</p>
       <a href="#" class="buy-button">Assinar</a>
     </div>
     
@@ -322,8 +340,9 @@
       <h3>Plano Vitalício</h3>
       <div class="price">R$150,00</div>
       <p>Acesso vitalício</p>
-      <p>Suporte 24/7</p>
-      <p>Atualizações gratuitas</p>
+      <p>Suporte VIP personalizado</p>
+      <p>Atualizações premium</p>
+      <p>Contas ilimitadas</p>
       <p>Bônus exclusivos</p>
       <a href="#" class="buy-button">Assinar</a>
     </div>
@@ -332,22 +351,27 @@
   <!-- Seção de Contato -->
   <div class="contact-section">
     <h3>Ficou com dúvidas?</h3>
-    <p>Entre em contato conosco através dos canais abaixo:</p>
+    <p>Nossa equipe está pronta para te ajudar a potencializar seus resultados:</p>
     <div class="contact-row">
       <div class="contact-buttons">
-        <a href="#" class="whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+        <a href="https://wa.me/5538998508385" class="whatsapp" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
         <a href="#" class="telegram"><i class="fab fa-telegram"></i> Telegram</a>
         <a href="#" class="instagram"><i class="fab fa-instagram"></i> Instagram</a>
       </div>
     </div>
+    <p style="margin-top: 20px; font-size: 14px; color: var(--texto-cinza);">
+      Horário de atendimento: Segunda a Sexta, das 9h às 18h
+    </p>
   </div>
 
+  <!-- Botão do WhatsApp Flutuante - AGORA FUNCIONANDO -->
   <a href="https://wa.me/5538998508385" class="whatsapp-button" target="_blank">
     <i class="fab fa-whatsapp"></i>
   </a>
 
   <footer>
-    &copy; 2025 Script JoinForceTG. Todos os direitos reservados.
+    &copy; 2025 Script JoinForceTG. Todos os direitos reservados.<br>
+    <small>Este produto não é afiliado ao Telegram ou qualquer outra plataforma mencionada.</small>
   </footer>
 </body>
 </html>

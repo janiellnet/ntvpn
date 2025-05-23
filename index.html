@@ -1,155 +1,178 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Loja de Acessórios</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f5f5f5;
-            color: #333;
-        }
-        header {
-            background-color: #1e1e2f;
-            color: white;
-            padding: 40px 0;
-            text-align: center;
-        }
-        nav {
-            background-color: #ffffff;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            text-align: center;
-            padding: 10px 0;
-        }
-        nav a {
-            margin: 0 20px;
-            text-decoration: none;
-            color: #333;
-            font-weight: 600;
-        }
-        .produtos {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-            padding: 40px;
-            max-width: 1200px;
-            margin: auto;
-        }
-        .produto {
-            background-color: white;
-            border-radius: 12px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-            overflow: hidden;
-            transition: transform 0.2s;
-        }
-        .produto:hover {
-            transform: translateY(-5px);
-        }
-        .produto img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-        .produto .info {
-            padding: 20px;
-        }
-        .produto h3 {
-            margin: 0 0 10px;
-            font-size: 18px;
-        }
-        .produto p {
-            font-size: 14px;
-            color: #666;
-        }
-        .preco {
-            margin-top: 10px;
-            font-size: 16px;
-            color: #27ae60;
-            font-weight: bold;
-        }
-        .comprar-btn {
-            margin-top: 15px;
-            background-color: #27ae60;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 8px;
-            cursor: pointer;
-            font-weight: bold;
-            transition: background-color 0.3s;
-            display: inline-block;
-            text-decoration: none;
-        }
-        .comprar-btn:hover {
-            background-color: #219150;
-        }
-        footer {
-            background-color: #1e1e2f;
-            color: white;
-            text-align: center;
-            padding: 20px;
-        }
-        .redes-sociais a {
-            margin: 0 10px;
-            color: white;
-            font-size: 24px;
-            text-decoration: none;
-        }
-    </style>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Loja de Acessórios</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f5f5f5;
+      color: #333;
+    }
+    header {
+      background-color: #1e1e2f;
+      color: white;
+      padding: 40px 0;
+      text-align: center;
+    }
+    nav {
+      background-color: #ffffff;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      text-align: center;
+      padding: 10px 0;
+    }
+    nav a {
+      margin: 0 20px;
+      text-decoration: none;
+      color: #333;
+      font-weight: 600;
+    }
+    .sobre {
+      background-color: #ffffff;
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: 40px auto 0;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    }
+    .sobre h2 {
+      margin-top: 0;
+      font-size: 28px;
+      color: #1e1e2f;
+    }
+    .sobre p {
+      font-size: 16px;
+      line-height: 1.6;
+      color: #555;
+    }
+    .produtos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      padding: 40px;
+      max-width: 1200px;
+      margin: auto;
+    }
+    .produto {
+      background-color: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+      overflow: hidden;
+      transition: transform 0.2s;
+    }
+    .produto:hover {
+      transform: translateY(-5px);
+    }
+    .produto img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    .produto .info {
+      padding: 20px;
+    }
+    .produto h3 {
+      margin: 0 0 10px;
+      font-size: 18px;
+    }
+    .produto p {
+      font-size: 14px;
+      color: #666;
+    }
+    .preco {
+      margin-top: 10px;
+      font-size: 16px;
+      color: #27ae60;
+      font-weight: bold;
+    }
+    .comprar-btn {
+      margin-top: 15px;
+      background-color: #27ae60;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background-color 0.3s;
+      display: inline-block;
+      text-decoration: none;
+    }
+    .comprar-btn:hover {
+      background-color: #219150;
+    }
+    footer {
+      background-color: #1e1e2f;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+    .redes-sociais a {
+      margin: 0 10px;
+      color: white;
+      font-size: 24px;
+      text-decoration: none;
+    }
+  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 </head>
 <body>
-    <header>
-        <h1>Loja de Acessórios</h1>
-        <p>Encontre os melhores acessórios para seu celular</p>
-    </header>
+  <header>
+    <h1>Loja de Acessórios</h1>
+    <p>Encontre os melhores acessórios para seu celular</p>
+  </header>
 
-    <nav>
-        <a href="#">Início</a>
-        <a href="#produtos">Produtos</a>
-        <a href="#contato">Contato</a>
-    </nav>
+  <nav>
+    <a href="#">Início</a>
+    <a href="#produtos">Produtos</a>
+    <a href="#contato">Contato</a>
+  </nav>
 
-    <section id="produtos" class="produtos">
-        <div class="produto">
-            <img src="https://images.unsplash.com/photo-1601784551446-20c9e07cdbdb?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Capinha para celular">
-            <div class="info">
-                <h3>Capinha Antichoque</h3>
-                <p>Design moderno e proteção reforçada.</p>
-                <p class="preco">R$ 39,90</p>
-                <a class="comprar-btn" href="https://wa.me/5599999999999?text=Olá,%20gostaria%20de%20comprar%20a%20Capinha%20Antichoque">Comprar</a>
-            </div>
-        </div>
+  <section class="sobre">
+    <h2>Quem Somos</h2>
+    <p>Somos uma loja especializada em acessórios para celular, oferecendo qualidade, variedade e os melhores preços. Nosso foco é entregar praticidade, estilo e proteção para seu dispositivo com produtos selecionados e atendimento rápido pelo WhatsApp. Trabalhamos com capinhas, carregadores, fones e muito mais. Tudo com entrega rápida e segura!</p>
+  </section>
 
-        <div class="produto">
-            <img src="https://images.unsplash.com/photo-1585771724684-38269d6639fd?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Carregador Turbo">
-            <div class="info">
-                <h3>Carregador Turbo 20W</h3>
-                <p>Carregamento rápido e seguro.</p>
-                <p class="preco">R$ 59,90</p>
-                <a class="comprar-btn" href="https://wa.me/5599999999999?text=Olá,%20gostaria%20de%20comprar%20o%20Carregador%20Turbo%2020W">Comprar</a>
-            </div>
-        </div>
+  <section id="produtos" class="produtos">
+    <div class="produto">
+      <img src="https://images.unsplash.com/photo-1601784551446-20c9e07cdbdb?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Capinha para celular" />
+      <div class="info">
+        <h3>Capinha Antichoque</h3>
+        <p>Design moderno e proteção reforçada.</p>
+        <p class="preco">R$ 39,90</p>
+        <a class="comprar-btn" href="https://wa.me/5599999999999?text=Olá,%20gostaria%20de%20comprar%20a%20Capinha%20Antichoque">Comprar</a>
+      </div>
+    </div>
 
-        <div class="produto">
-            <img src="https://images.unsplash.com/photo-1585771724684-38269d6639fd?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Fone Bluetooth">
-            <div class="info">
-                <h3>Fone de Ouvido Bluetooth</h3>
-                <p>Som de alta qualidade sem fios.</p>
-                <p class="preco">R$ 99,90</p>
-                <a class="comprar-btn" href="https://wa.me/5599999999999?text=Olá,%20gostaria%20de%20comprar%20o%20Fone%20Bluetooth">Comprar</a>
-            </div>
-        </div>
-    </section>
+    <div class="produto">
+      <img src="https://images.unsplash.com/photo-1585771724684-38269d6639fd?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Carregador Turbo" />
+      <div class="info">
+        <h3>Carregador Turbo 20W</h3>
+        <p>Carregamento rápido e seguro.</p>
+        <p class="preco">R$ 59,90</p>
+        <a class="comprar-btn" href="https://wa.me/5599999999999?text=Olá,%20gostaria%20de%20comprar%20o%20Carregador%20Turbo%2020W">Comprar</a>
+      </div>
+    </div>
 
-    <footer>
-        <p>© 2025 Loja de Acessórios. Todos os direitos reservados.</p>
-        <div class="redes-sociais">
-            <a href="#"><i class="fab fa-whatsapp"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-        </div>
-    </footer>
+    <div class="produto">
+      <img src="https://images.unsplash.com/photo-1585771724684-38269d6639fd?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Fone Bluetooth" />
+      <div class="info">
+        <h3>Fone de Ouvido Bluetooth</h3>
+        <p>Som de alta qualidade sem fios.</p>
+        <p class="preco">R$ 99,90</p>
+        <a class="comprar-btn" href="https://wa.me/5599999999999?text=Olá,%20gostaria%20de%20comprar%20o%20Fone%20Bluetooth">Comprar</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Loja de Acessórios. Todos os direitos reservados.</p>
+    <div class="redes-sociais">
+      <a href="#"><i class="fab fa-whatsapp"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+    </div>
+  </footer>
 </body>
 </html>

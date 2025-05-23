@@ -977,4 +977,62 @@
                 price.textContent = 'R$ 249,90';
             } else if (productId === 3) {
                 title.textContent = 'Carregador Rápido Turbo 30W';
-                description.textContent = 'Carregador ultrarrápido com tecnologia Power Delivery 3.0
+                description.textContent = 'Carregador ultrarrápido com tecnologia Power Delivery 3.0, compatível com diversos dispositivos. Recarrega seu smartphone até 50% em apenas 30 minutos. Proteções contra sobretensão, sobrecorrente e curto-circuito para maior segurança.';
+                price.textContent = 'R$ 119,90';
+            } else if (productId === 4) {
+                title.textContent = 'Capinha Slim Galaxy S22 Ultra';
+                description.textContent = 'Capinha fina e elegante com proteção anti-riscos e toque macio ao mesmo tempo que mantém o design premium do seu dispositivo. Bordas elevadas para proteção da tela e câmera. Disponível em várias cores translúcidas que destacam o design do seu aparelho.';
+                price.textContent = 'R$ 79,90';
+            }
+            
+            modal.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeModal() {
+            const modal = document.getElementById('productModal');
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+        
+        function changeMainImage(src) {
+            document.getElementById('modalMainImage').src = src;
+        }
+        
+        function increaseQuantity() {
+            const input = document.getElementById('productQuantity');
+            input.value = parseInt(input.value) + 1;
+        }
+        
+        function decreaseQuantity() {
+            const input = document.getElementById('productQuantity');
+            if (parseInt(input.value) > 1) {
+                input.value = parseInt(input.value) - 1;
+            }
+        }
+        
+        // Fechar modal ao clicar fora do conteúdo
+        window.onclick = function(event) {
+            const modal = document.getElementById('productModal');
+            if (event.target === modal) {
+                closeModal();
+            }
+        }
+        
+        // Simular adição ao carrinho
+        document.querySelectorAll('.btn-add-to-cart').forEach(button => {
+            button.addEventListener('click', function() {
+                const productCard = this.closest('.product-card');
+                const productName = productCard.querySelector('.product-title').textContent;
+                const productPrice = productCard.querySelector('.product-price').textContent;
+                
+                alert(`${productName} adicionado ao carrinho!\nPreço: ${productPrice}`);
+                
+                // Atualizar contador do carrinho (simulação)
+                const cartCount = document.querySelector('.cart-count');
+                cartCount.textContent = parseInt(cartCount.textContent) + 1;
+            });
+        });
+    </script>
+</body>
+</html>

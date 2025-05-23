@@ -47,11 +47,19 @@
       line-height: 1.6;
       color: #555;
     }
+    .titulo-produtos {
+      text-align: center;
+      font-size: 30px;
+      font-weight: bold;
+      margin-top: 60px;
+      margin-bottom: 20px;
+      color: #1e1e2f;
+    }
     .produtos {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 20px;
-      padding: 40px;
+      padding: 0 40px 40px;
       max-width: 1200px;
       margin: auto;
     }
@@ -135,7 +143,9 @@
     <p>Somos uma loja especializada em acessórios para celular, oferecendo qualidade, variedade e os melhores preços. Nosso foco é entregar praticidade, estilo e proteção para seu dispositivo com produtos selecionados e atendimento rápido pelo WhatsApp. Trabalhamos com capinhas, carregadores, fones e muito mais. Tudo com entrega rápida e segura!</p>
   </section>
 
-  <section id="produtos" class="produtos">
+  <h2 class="titulo-produtos" id="produtos">Produtos</h2>
+
+  <section class="produtos">
     <div class="produto">
       <img src="https://images.unsplash.com/photo-1601784551446-20c9e07cdbdb?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Capinha para celular" />
       <div class="info">
@@ -167,7 +177,7 @@
     </div>
   </section>
 
-  <footer>
+  <footer id="contato">
     <p>© 2025 Loja de Acessórios. Todos os direitos reservados.</p>
     <div class="redes-sociais">
       <a href="#"><i class="fab fa-whatsapp"></i></a>

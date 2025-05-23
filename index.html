@@ -1,756 +1,118 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
+<!DOCTYPE html><html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MobileAcessórios - Acessórios Elegantes</title>
+    <title>Loja de Acessórios para Celular</title>
     <style>
-        /* Reset e Estilos Globais */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', system-ui, sans-serif;
-        }
-        
         body {
-            background-color: #fafafa;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #ffecd2, #fcb69f);
             color: #333;
-            line-height: 1.6;
         }
-        
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-        
-        /* Cabeçalho Minimalista */
         header {
-            background-color: #fff;
-            padding: 1rem 0;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-            position: sticky;
-            top: 0;
-            z-index: 100;
+            background-color: #ff6f61;
+            padding: 20px;
+            text-align: center;
+            color: white;
         }
-        
-        .container {
-            width: 90%;
-            max-width: 1100px;
-            margin: 0 auto;
-        }
-        
-        .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .logo {
-            font-size: 1.4rem;
-            font-weight: 600;
-            color: #5d5dff;
-        }
-        
-        nav ul {
-            display: flex;
-            list-style: none;
-        }
-        
-        nav ul li {
-            margin-left: 1.2rem;
-        }
-        
-        nav ul li a {
-            font-weight: 500;
-            font-size: 0.95rem;
-            color: #555;
-            transition: color 0.2s ease;
-        }
-        
-        nav ul li a:hover {
-            color: #5d5dff;
-        }
-        
-        .cart-icon {
-            color: #555;
-            font-size: 1.1rem;
-        }
-        
-        /* Banner Simples */
-        .hero {
-            background-color: #f0f4ff;
-            padding: 3rem 0;
+        nav {
+            background-color: #ffcc70;
+            padding: 10px;
             text-align: center;
         }
-        
-        .hero h1 {
-            font-size: 2rem;
-            margin-bottom: 1rem;
+        nav a {
+            margin: 0 15px;
             color: #333;
-            font-weight: 600;
+            text-decoration: none;
+            font-weight: bold;
         }
-        
-        .hero p {
-            font-size: 1rem;
-            color: #666;
-            max-width: 600px;
-            margin: 0 auto 1.5rem;
-        }
-        
-        .btn {
-            display: inline-block;
-            background: #5d5dff;
-            color: white;
-            padding: 0.6rem 1.5rem;
-            border-radius: 4px;
-            font-weight: 500;
-            font-size: 0.9rem;
-            transition: all 0.2s ease;
-        }
-        
-        .btn:hover {
-            background: #4a4ae6;
-            transform: translateY(-2px);
-        }
-        
-        /* Seção de Produtos Compacta */
-        .section-title {
-            text-align: center;
-            margin: 2.5rem 0 1.5rem;
-            font-size: 1.5rem;
-            color: #444;
-            font-weight: 500;
-        }
-        
-        .products {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-            gap: 1.5rem;
-            margin-bottom: 2rem;
-        }
-        
-        .product-card {
-            background: white;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-            transition: all 0.2s ease;
-        }
-        
-        .product-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-        }
-        
-        .product-image {
-            height: 160px;
-            overflow: hidden;
-        }
-        
-        .product-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        
-        .product-info {
-            padding: 1rem;
-        }
-        
-        .product-category {
-            font-size: 0.75rem;
-            color: #5d5dff;
-            margin-bottom: 0.3rem;
-            font-weight: 500;
-        }
-        
-        .product-title {
-            font-size: 1rem;
-            margin-bottom: 0.5rem;
-            color: #333;
-        }
-        
-        .product-description {
-            color: #777;
-            font-size: 0.85rem;
-            margin-bottom: 0.8rem;
-            line-height: 1.4;
-        }
-        
-        .product-price {
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: #5d5dff;
-            margin-bottom: 0.8rem;
-        }
-        
-        .product-actions {
+        .produtos {
             display: flex;
-            justify-content: space-between;
-        }
-        
-        .btn-add-to-cart {
-            background: #5d5dff;
-            color: white;
-            border: none;
-            padding: 0.5rem 1rem;
-            border-radius: 4px;
-            font-size: 0.8rem;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            flex-grow: 1;
-        }
-        
-        .btn-add-to-cart:hover {
-            background: #4a4ae6;
-        }
-        
-        .btn-details {
-            background: white;
-            color: #5d5dff;
-            border: 1px solid #ddd;
-            padding: 0.5rem;
-            border-radius: 4px;
-            font-size: 0.8rem;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            margin-left: 0.5rem;
-        }
-        
-        .btn-details:hover {
-            border-color: #5d5dff;
-        }
-        
-        /* Seção de Contato Minimalista */
-        .contact {
-            background: white;
-            padding: 2rem;
-            margin: 2rem 0;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-        }
-        
-        .contact h2 {
-            text-align: center;
-            margin-bottom: 1.5rem;
-            font-size: 1.5rem;
-            color: #444;
-        }
-        
-        .contact-form {
-            max-width: 500px;
-            margin: 0 auto;
-        }
-        
-        .form-group {
-            margin-bottom: 1rem;
-        }
-        
-        .contact-form label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-size: 0.9rem;
-            color: #555;
-        }
-        
-        .contact-form input,
-        .contact-form textarea {
-            width: 100%;
-            padding: 0.7rem;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            font-size: 0.9rem;
-        }
-        
-        .contact-form textarea {
-            height: 120px;
-        }
-        
-        .submit-btn {
-            width: 100%;
-            padding: 0.7rem;
-            background: #5d5dff;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            font-weight: 500;
-            cursor: pointer;
-            transition: background 0.2s ease;
-        }
-        
-        .submit-btn:hover {
-            background: #4a4ae6;
-        }
-        
-        /* Rodapé Simples */
-        footer {
-            background: #f0f4ff;
-            padding: 2rem 0;
-            text-align: center;
-            font-size: 0.9rem;
-            color: #666;
-        }
-        
-        .footer-links {
-            display: flex;
+            flex-wrap: wrap;
             justify-content: center;
-            margin-bottom: 1rem;
+            padding: 20px;
         }
-        
-        .footer-links a {
-            margin: 0 0.8rem;
-            color: #555;
-            transition: color 0.2s ease;
-        }
-        
-        .footer-links a:hover {
-            color: #5d5dff;
-        }
-        
-        .copyright {
-            margin-top: 1rem;
-        }
-        
-        /* Modal Compacto */
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.5);
-            z-index: 1000;
-            overflow-y: auto;
-        }
-        
-        .modal-content {
+        .produto {
             background: white;
-            width: 90%;
-            max-width: 500px;
-            margin: 2rem auto;
-            border-radius: 8px;
+            margin: 15px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            width: 250px;
+            text-align: center;
             overflow: hidden;
-            animation: modalFadeIn 0.3s ease;
         }
-        
-        @keyframes modalFadeIn {
-            from { opacity: 0; transform: translateY(-20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
-        .modal-header {
-            padding: 1rem;
-            border-bottom: 1px solid #eee;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .close-modal {
-            font-size: 1.5rem;
-            cursor: pointer;
-            color: #999;
-        }
-        
-        .modal-body {
-            padding: 1rem;
-        }
-        
-        .modal-image {
+        .produto img {
             width: 100%;
             height: 200px;
-            object-fit: contain;
-            margin-bottom: 1rem;
-            background: #f9f9f9;
-            border-radius: 4px;
+            object-fit: cover;
         }
-        
-        .modal-price {
-            font-size: 1.3rem;
-            color: #5d5dff;
-            font-weight: 600;
-            margin: 0.5rem 0;
+        .produto h3 {
+            margin: 10px 0 5px;
         }
-        
-        .modal-description {
-            color: #666;
-            font-size: 0.9rem;
-            margin-bottom: 1rem;
-            line-height: 1.5;
+        .produto p {
+            margin: 5px 0;
         }
-        
-        .modal-specs {
-            margin: 1rem 0;
+        .preco {
+            color: green;
+            font-weight: bold;
+            margin-bottom: 10px;
         }
-        
-        .modal-specs h3 {
-            font-size: 1rem;
-            margin-bottom: 0.5rem;
-            color: #444;
-        }
-        
-        .modal-specs ul {
-            list-style-position: inside;
-            font-size: 0.9rem;
-            color: #666;
-        }
-        
-        .modal-specs li {
-            margin-bottom: 0.3rem;
-        }
-        
-        .modal-actions {
-            display: flex;
-            margin-top: 1.5rem;
-        }
-        
-        .quantity-selector {
-            display: flex;
-            align-items: center;
-            margin-right: 1rem;
-        }
-        
-        .quantity-selector button {
-            background: #f0f0f0;
-            border: none;
-            width: 30px;
-            height: 30px;
-            font-size: 1rem;
-            cursor: pointer;
-            color: #555;
-        }
-        
-        .quantity-selector input {
-            width: 40px;
-            height: 30px;
+        footer {
+            background-color: #222;
+            color: white;
             text-align: center;
-            border: 1px solid #ddd;
-            margin: 0 0.2rem;
+            padding: 20px;
         }
-        
-        /* Responsividade */
-        @media (max-width: 768px) {
-            .products {
-                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            }
-            
-            nav ul li {
-                margin-left: 0.8rem;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .header-content {
-                flex-direction: column;
-            }
-            
-            .logo {
-                margin-bottom: 0.5rem;
-            }
-            
-            .products {
-                grid-template-columns: 1fr;
-            }
-            
-            .product-actions {
-                flex-direction: column;
-            }
-            
-            .btn-details {
-                margin-left: 0;
-                margin-top: 0.5rem;
-            }
-            
-            .modal-actions {
-                flex-direction: column;
-            }
-            
-            .quantity-selector {
-                margin-bottom: 0.5rem;
-                margin-right: 0;
-                justify-content: center;
-            }
+        .redes-sociais a {
+            margin: 0 10px;
+            color: white;
+            font-size: 24px;
+            text-decoration: none;
         }
     </style>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <!-- Cabeçalho Minimalista -->
     <header>
-        <div class="container">
-            <div class="header-content">
-                <div class="logo">MobileAcessórios</div>
-                <nav>
-                    <ul>
-                        <li><a href="#home">Início</a></li>
-                        <li><a href="#products">Produtos</a></li>
-                        <li><a href="#contact">Contato</a></li>
-                        <li><a href="#" class="cart-icon"><i class="fas fa-shopping-cart"></i></a></li>
-                    </ul>
-                </nav>
-            </div>
-        </div>
-    </header>
+        <h1>Loja Top Acessórios</h1>
+        <p>Capinhas, Carregadores, Fones e Muito Mais!</p>
+    </header><nav>
+    <a href="#">Início</a>
+    <a href="#produtos">Produtos</a>
+    <a href="#contato">Contato</a>
+</nav>
 
-    <!-- Banner Simples -->
-    <section class="hero" id="home">
-        <div class="container">
-            <h1>Acessórios Elegantes para Seu Celular</h1>
-            <p>Encontre os melhores acessórios com design minimalista e alta qualidade para seu dispositivo móvel.</p>
-            <a href="#products" class="btn">Ver Produtos</a>
-        </div>
-    </section>
-
-    <!-- Produtos em Destaque -->
-    <section class="container" id="products">
-        <h2 class="section-title">Nossos Produtos</h2>
-        <div class="products">
-            <!-- Produto 1 -->
-            <div class="product-card">
-                <div class="product-image">
-                    <img src="https://images.unsplash.com/photo-1601784551446-20c9e07cdbdb?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Capinha para iPhone">
-                </div>
-                <div class="product-info">
-                    <span class="product-category">CAPINHA</span>
-                    <h3 class="product-title">Capinha Slim iPhone</h3>
-                    <p class="product-description">Design fino e elegante com proteção básica contra arranhões e quedas leves.</p>
-                    <div class="product-price">R$ 59,90</div>
-                    <div class="product-actions">
-                        <button class="btn-add-to-cart">Adicionar</button>
-                        <button class="btn-details" onclick="openModal(1)">Detalhes</button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Produto 2 -->
-            <div class="product-card">
-                <div class="product-image">
-                    <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Fones de Ouvido">
-                </div>
-                <div class="product-info">
-                    <span class="product-category">FONES</span>
-                    <h3 class="product-title">Fone Bluetooth</h3>
-                    <p class="product-description">Som claro e bateria de longa duração. Conforto para uso prolongado.</p>
-                    <div class="product-price">R$ 129,90</div>
-                    <div class="product-actions">
-                        <button class="btn-add-to-cart">Adicionar</button>
-                        <button class="btn-details" onclick="openModal(2)">Detalhes</button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Produto 3 -->
-            <div class="product-card">
-                <div class="product-image">
-                    <img src="https://images.unsplash.com/photo-1585771724684-38269d6639fd?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Carregador">
-                </div>
-                <div class="product-info">
-                    <span class="product-category">CARREGADOR</span>
-                    <h3 class="product-title">Carregador Rápido</h3>
-                    <p class="product-description">Carregamento eficiente com proteção contra sobrecarga. Compatível com diversos dispositivos.</p>
-                    <div class="product-price">R$ 79,90</div>
-                    <div class="product-actions">
-                        <button class="btn-add-to-cart">Adicionar</button>
-                        <button class="btn-details" onclick="openModal(3)">Detalhes</button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Produto 4 -->
-            <div class="product-card">
-                <div class="product-image">
-                    <img src="https://images.unsplash.com/photo-1605236453806-6ff36851218e?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Suporte">
-                </div>
-                <div class="product-info">
-                    <span class="product-category">ACESSÓRIO</span>
-                    <h3 class="product-title">Suporte Ajustável</h3>
-                    <p class="product-description">Posicione seu celular no ângulo perfeito para assistir vídeos ou fazer videochamadas.</p>
-                    <div class="product-price">R$ 39,90</div>
-                    <div class="product-actions">
-                        <button class="btn-add-to-cart">Adicionar</button>
-                        <button class="btn-details" onclick="openModal(4)">Detalhes</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Seção de Contato -->
-    <section class="container contact" id="contact">
-        <h2>Entre em Contato</h2>
-        <form class="contact-form">
-            <div class="form-group">
-                <label for="name">Nome</label>
-                <input type="text" id="name" required>
-            </div>
-            <div class="form-group">
-                <label for="email">E-mail</label>
-                <input type="email" id="email" required>
-            </div>
-            <div class="form-group">
-                <label for="message">Mensagem</label>
-                <textarea id="message" required></textarea>
-            </div>
-            <button type="submit" class="submit-btn">Enviar Mensagem</button>
-        </form>
-    </section>
-
-    <!-- Rodapé Simples -->
-    <footer>
-        <div class="container">
-            <div class="footer-links">
-                <a href="#home">Início</a>
-                <a href="#products">Produtos</a>
-                <a href="#contact">Contato</a>
-                <a href="#">Termos</a>
-                <a href="#">Privacidade</a>
-            </div>
-            <div class="copyright">
-                &copy; 2023 MobileAcessórios. Todos os direitos reservados.
-            </div>
-        </div>
-    </footer>
-
-    <!-- Modal de Produto Compacto -->
-    <div class="modal" id="productModal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2 id="modalProductTitle">Capinha Slim iPhone</h2>
-                <span class="close-modal" onclick="closeModal()">&times;</span>
-            </div>
-            <div class="modal-body">
-                <img src="https://images.unsplash.com/photo-1601784551446-20c9e07cdbdb?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Produto" class="modal-image" id="modalImage">
-                <div class="modal-price" id="modalPrice">R$ 59,90</div>
-                <p class="modal-description" id="modalDescription">
-                    Design fino e elegante com proteção básica contra arranhões e quedas leves. Material de silicone macio que não amarela com o tempo. Disponível em várias cores para combinar com seu estilo.
-                </p>
-                <div class="modal-specs">
-                    <h3>Especificações</h3>
-                    <ul id="modalSpecs">
-                        <li>Material: Silicone premium</li>
-                        <li>Compatibilidade: iPhone 11/12/13</li>
-                        <li>Cores: Preto, Branco, Azul, Rosa</li>
-                        <li>Garantia: 6 meses</li>
-                    </ul>
-                </div>
-                <div class="modal-actions">
-                    <div class="quantity-selector">
-                        <button onclick="decreaseQuantity()">-</button>
-                        <input type="number" value="1" min="1" id="productQuantity">
-                        <button onclick="increaseQuantity()">+</button>
-                    </div>
-                    <button class="btn-add-to-cart" style="flex-grow: 1;">Adicionar ao Carrinho</button>
-                </div>
-            </div>
-        </div>
+<section id="produtos" class="produtos">
+    <div class="produto">
+        <img src="https://via.placeholder.com/250x200?text=Capinha+Colorida" alt="Capinha">
+        <h3>Capinha Colorida</h3>
+        <p>Proteção e estilo para seu celular.</p>
+        <p class="preco">R$ 29,90</p>
     </div>
 
-    <script>
-        // Funções para o modal
-        function openModal(productId) {
-            const modal = document.getElementById('productModal');
-            const title = document.getElementById('modalProductTitle');
-            const image = document.getElementById('modalImage');
-            const price = document.getElementById('modalPrice');
-            const description = document.getElementById('modalDescription');
-            const specs = document.getElementById('modalSpecs');
-            
-            // Dados simulados para cada produto
-            if (productId === 1) {
-                title.textContent = 'Capinha Slim iPhone';
-                image.src = 'https://images.unsplash.com/photo-1601784551446-20c9e07cdbdb?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80';
-                price.textContent = 'R$ 59,90';
-                description.textContent = 'Design fino e elegante com proteção básica contra arranhões e quedas leves. Material de silicone macio que não amarela com o tempo. Disponível em várias cores para combinar com seu estilo.';
-                specs.innerHTML = `
-                    <li>Material: Silicone premium</li>
-                    <li>Compatibilidade: iPhone 11/12/13</li>
-                    <li>Cores: Preto, Branco, Azul, Rosa</li>
-                    <li>Garantia: 6 meses</li>
-                `;
-            } else if (productId === 2) {
-                title.textContent = 'Fone Bluetooth';
-                image.src = 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80';
-                price.textContent = 'R$ 129,90';
-                description.textContent = 'Fones de ouvido sem fio com Bluetooth 5.0, bateria de até 20 horas de uso contínuo e qualidade de som clara. Design ergonômico para conforto prolongado.';
-                specs.innerHTML = `
-                    <li>Conexão: Bluetooth 5.0</li>
-                    <li>Bateria: Até 20h de uso</li>
-                    <li>Alcance: 10 metros</li>
-                    <li>Garantia: 1 ano</li>
-                `;
-            } else if (productId === 3) {
-                title.textContent = 'Carregador Rápido';
-                image.src = 'https://images.unsplash.com/photo-1585771724684-38269d6639fd?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80';
-                price.textContent = 'R$ 79,90';
-                description.textContent = 'Carregador rápido com tecnologia inteligente que ajusta a potência para seu dispositivo. Proteção contra sobrecarga e curtos-circuitos para maior segurança.';
-                specs.innerHTML = `
-                    <li>Potência: 18W</li>
-                    <li>Compatível com Quick Charge</li>
-                    <li>Entrada: 100-240V</li>
-                    <li>Garantia: 1 ano</li>
-                `;
-            } else if (productId === 4) {
-                title.textContent = 'Suporte Ajustável';
-                image.src = 'https://images.unsplash.com/photo-1605236453806-6ff36851218e?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80';
-                price.textContent = 'R$ 39,90';
-                description.textContent = 'Suporte universal ajustável para celulares e tablets. Base pesada para maior estabilidade e braço flexível para posicionamento em qualquer ângulo.';
-                specs.innerHTML = `
-                    <li>Material: Alumínio e silicone</li>
-                    <li>Compatível com smartphones e tablets</li>
-                    <li>Base anti-derrapante</li>
-                    <li>Garantia: 6 meses</li>
-                `;
-            }
-            
-            modal.style.display = 'block';
-            document.body.style.overflow = 'hidden';
-        }
-        
-        function closeModal() {
-            const modal = document.getElementById('productModal');
-            modal.style.display = 'none';
-            document.body.style.overflow = 'auto';
-        }
-        
-        function increaseQuantity() {
-            const input = document.getElementById('productQuantity');
-            input.value = parseInt(input.value) + 1;
-        }
-        
-        function decreaseQuantity() {
-            const input = document.getElementById('productQuantity');
-            if (parseInt(input.value) > 1) {
-                input.value = parseInt(input.value) - 1;
-            }
-        }
-        
-        // Fechar modal ao clicar fora do conteúdo
-        window.onclick = function(event) {
-            const modal = document.getElementById('productModal');
-            if (event.target === modal) {
-                closeModal();
-            }
-        }
-        
-        // Simular adição ao carrinho
-        document.querySelectorAll('.btn-add-to-cart').forEach(button => {
-            button.addEventListener('click', function() {
-                const productCard = this.closest('.product-card');
-                const productName = productCard.querySelector('.product-title').textContent;
-                const productPrice = productCard.querySelector('.product-price').textContent;
-                
-                alert(`${productName} adicionado ao carrinho!\nPreço: ${productPrice}`);
-            });
-        });
-        
-        // Formulário de contato
-        document.querySelector('.contact-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Mensagem enviada com sucesso! Entraremos em contato em breve.');
-            this.reset();
-        });
-    </script>
+    <div class="produto">
+        <img src="https://via.placeholder.com/250x200?text=Carregador+R%C3%A1pido" alt="Carregador">
+        <h3>Carregador Rápido</h3>
+        <p>Carregue seu celular em tempo recorde.</p>
+        <p class="preco">R$ 49,90</p>
+    </div>
+
+    <div class="produto">
+        <img src="https://via.placeholder.com/250x200?text=Fone+Bluetooth" alt="Fone">
+        <h3>Fone Bluetooth</h3>
+        <p>Qualidade de som sem fios.</p>
+        <p class="preco">R$ 89,90</p>
+    </div>
+</section>
+
+<footer>
+    <p>© 2025 Loja Top Acessórios. Todos os direitos reservados.</p>
+    <div class="redes-sociais">
+        <a href="https://wa.me/SEUNUMERO" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://instagram.com/SEUINSTAGRAM" target="_blank"><i class="fab fa-instagram"></i></a>
+    </div>
+</footer>
+
 </body>
 </html>
